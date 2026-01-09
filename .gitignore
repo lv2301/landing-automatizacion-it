@@ -1,0 +1,16 @@
+# Entorno
+.env
+.env.*
+
+# Frontend
+node_modules/
+.vite/
+dist/
+build/
+
+# Python
+__pycache__/
+*.pyc
+
+# SO / editor
+.DS_Store

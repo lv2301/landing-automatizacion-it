@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    /* Habilita el desplazamiento suave para la navegación por ID */
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-darkBg text-textMain font-sans antialiased;
+    margin: 0;
+    /* Evita el scroll horizontal por animaciones de salida */
+    overflow-x: hidden;
+  }
+
+  /* Personalización de la selección de texto */
+  ::selection {
+    @apply bg-accent/30 text-accent;
+  }
+}
+
+/* --- Mejoras de Estilo Globales --- */
+
+/* Scrollbar personalizada con look Tech/Minimalista */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-darkBg;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-800 rounded-full transition-colors;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-accent/50;
+}
+
+/* --- Utilidades de Animación --- */
+
+/* Efecto de Glassmorphism para Navbar y tarjetas */
+.glass {
+  @apply backdrop-blur-md bg-darkBg/80 border border-white/10;
+}
+
+/* Ajuste para que las imágenes mantengan su proporción en el Blog */
+img {
+  @apply max-w-full h-auto;
+}
+
+/* Corrección para dispositivos móviles: Evitar saltos de layout */
+@media (max-width: 768px) {
+  .section-padding {
+    @apply py-16 px-4;
+  }
+}
+
+/* Efecto de resplandor sutil para acentos (Glow Effect) */
+.accent-glow {
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.2);
+}
+
+/* --- Transiciones de sección --- */
+/* Esta clase ayuda a que Framer Motion no cause parpadeos antes de cargar */
+.framer-section {
+  will-change: transform, opacity;
+}
