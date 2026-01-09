@@ -1,4 +1,5 @@
-from .chat import get_ai_response
+# app/ai/__init__.py
+from .chat import get_chatbot_response
 
 async def get_chatbot_response(message: str, history: list = []):
     """
